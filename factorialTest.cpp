@@ -1,5 +1,6 @@
 #include "factorial.hpp"
 #include "gtest/gtest.h"
+#include "user_exception.hpp"
 
 TEST(factorialTest, HandlesZeroInput)
 {
@@ -16,7 +17,7 @@ TEST(factorialTest, HandlesPositiveInput)
 
 TEST(factorialTest, HandleNegativeInput)
 {
-    EXPECT_EQ(factorial(-10), -1);
+    EXPECT_THROW(factorial(-10), UserException);
 }
 
 int main(int argc, char **argv)
